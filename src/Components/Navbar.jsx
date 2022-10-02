@@ -1,5 +1,7 @@
 import '../Styles/Navbar.css'
 import React, {useState} from 'react'
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
 const Navbar = () =>{
     const [showLinks, setshowLinks] = useState(false);
 
@@ -12,8 +14,10 @@ const Navbar = () =>{
             <div className='links' id={showLinks ? "hidden" : ""}>
             <a>Home </a>
             <a>Contact</a>
+            </div >
+            <div className='navToggle'>
+            <BiMenuAltRight onClick={() => setshowLinks(!showLinks)}>Menu</BiMenuAltRight>
             </div>
-            <button onClick={() => setshowLinks(!showLinks)}>Menu</button>
             </div>
         </nav>
     )

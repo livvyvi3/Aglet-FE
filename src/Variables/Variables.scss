@@ -3,5 +3,8 @@ $blackColor: rgb(24, 24, 24);
 $whiteColor: rgb(255, 255, 255);
 $greyColor: rgb(114, 109, 109);
 
+//substitute for Helventica Neue font-family
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
 //fonts
-$itleFont: ''Courier New', Courier, monospace;';
+$openSans: 'Open Sans', sans-serif;
