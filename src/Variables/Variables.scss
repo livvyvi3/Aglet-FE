@@ -1,10 +1,29 @@
 //colors
 $blackColor: rgb(24, 24, 24);
 $whiteColor: rgb(255, 255, 255);
-$greyColor: rgb(114, 109, 109);
+$primary: rgb(114, 109, 109);
 
 //substitute for Helventica Neue font-family
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 //fonts
 $openSans: 'Open Sans', sans-serif;
+$boldWeight: 700;
+// spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// border radius
+$borderRadius: 12px;
+
+// header height
+$headerHeight: 100px;
+
+@mixin breakpoint($point) {
+    @if $point == md {
+        // 768px
+        @media (min-width: 48em) {
+            @content;
+        }
+    }
+}

@@ -1,25 +1,72 @@
-import '../Styles/Navbar.css'
-import React, {useState} from 'react'
+import classes from "../Styles/Navbar.module.css";
+import React, { useState, useEffect } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-const Navbar = () =>{
-    const [showLinks, setshowLinks] = useState(false);
+import { Link } from "react-router-dom";
+import logo from "../Images/aglet_logo.svg";
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [size, setSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
 
-    return(
-        <nav className='Navbar'>
-            <div className='leftSide'>
-                <img alt='logo'/>
-            </div>
-            <div className='rightSide'>
-            <div className='links' id={showLinks ? "hidden" : ""}>
-            <a>Home </a>
-            <a>Contact</a>
-            </div >
-            <div className='navToggle'>
-            <BiMenuAltRight onClick={() => setshowLinks(!showLinks)}>Menu</BiMenuAltRight>
-            </div>
-            </div>
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (size.width > 768 && menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [size.width, menuOpen]);
+
+  const menuToggleHandler = () => {
+    setMenuOpen((p) => !p);
+  };
+
+  return (
+    <header className={classes.header}>
+      <div className={classes.header__content}>
+        <div className={classes.header__content__logo}>
+          <img alt="logo" src={logo} />
+        </div>
+        <nav
+          className={`${classes.header__content__nav} ${
+            menuOpen && size.width < 768 ? classes.isMenu : ""
+          }`}
+        >
+          <ul>
+            <li>
+              <Link to="/home" onClick={menuToggleHandler}>
+                home
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/contact" onClick={menuToggleHandler}>
+                contact
+              </Link>
+            </li>
+          </ul>
         </nav>
-    )
-}
-export default Navbar
+        <div className={classes.header__content__toggle}>
+          {!menuOpen ? (
+            <BiMenuAltRight onClick={menuToggleHandler} />
+          ) : (
+            <AiOutlineClose onClick={menuToggleHandler} />
+          )}
+        </div>
+      </div>
+    </header>
+  );
+};
+export default Navbar;
