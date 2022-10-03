@@ -4,10 +4,12 @@
     background: $blackColor;
     width: 100%;
     max-height: 100vh;
-    padding: 0  0.5rem;
+    padding: 0 0.5rem;
+
     @include breakpoint(md) {
         padding: 0 0.5rem;
     }
+
     transition: 0.3s ease all;
 
     &__content {
@@ -23,14 +25,15 @@
         z-index: 100;
         font-family: $openSans;
 
-        &__logo{
-            padding-left: 4.5rem;           
-            img{
+        &__logo {
+            padding-left: 4.5rem;
+
+            img {
                 height: 50%;
                 width: 40%;
             }
         }
-        
+
 
         &__nav {
             top: 0;
@@ -57,37 +60,59 @@
                 height: 100%;
                 position: static;
             }
+
             ul {
                 list-style: none;
                 padding: 0;
                 display: flex;
                 flex-direction: column;
-                margin-bottom: calc(25.5rem + #{$spacing-md});;
+                margin-bottom: calc(25.5rem + #{$spacing-md});
+                ;
+
                 @include breakpoint(md) {
                     flex-direction: row;
                     align-items: center;
                     margin-bottom: calc(0.5rem + #{$spacing-md});
                     margin-right: 5rem;
                 }
+
                 li {
                     &:not(:last-child) {
                         margin-bottom: $spacing-lg;
+
                         @include breakpoint(md) {
                             margin-bottom: 0;
                             margin-right: $spacing-md;
                         }
                     }
+
                     a {
                         text-decoration: none;
                         color: inherit;
                         padding: 0.75rem 1.25rem;
-                        border-radius: $borderRadius;
                         transition: 0.3s ease all;
+                        position: relative;
 
-
-                        &:hover {
-                            background: rgba($whiteColor, 0.1);
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            cursor: pointer;
+                            width: 100%;
+                            height: 0.175rem;
+                            left: 0;
+                            bottom: 0;
+                            background: $whiteColor;
+                            transform: scale(0, 1);
+                            transform-origin: 0% 100%;
+                            transition: transform 0.3s ease;
                         }
+
+
+                        &:hover::after {
+
+                            transform: scale(1, 1);
+                        }
+
                         &:active {
                             border-radius: calc(#{$borderRadius} + 6px);
                             background: linear-gradient(rgba($whiteColor, 0.1), rgba($whiteColor, 0.2));
@@ -95,7 +120,7 @@
                     }
                 }
             }
-            
+
 
             &.isMenu {
                 transform: translate(100%);
@@ -114,8 +139,8 @@
             font-size: 2rem;
             transition: 0.3s ease all;
             position: relative;
-            padding:  2.5rem;
-            
+            padding: 2.5rem;
+
             &:hover {
                 color: $primary;
             }
