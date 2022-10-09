@@ -18,8 +18,8 @@ $borderRadius: 12px;
 
 // header height
 $headerHeight: 100px;
-
-@mixin breakpoint($point) {
+// Mxins
+@mixin brkPointSmallScreen($point) {
     @if $point == md {
         // 768px
         @media (min-width: 48em) {
@@ -27,3 +27,23 @@ $headerHeight: 100px;
         }
     }
 }
+
+@mixin mobileScreen ($point){
+    @if $point == md{
+        @media (max-width: 640px) {
+            @content;
+        }
+    }
+}
+@mixin flexCenter($direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin easeTransition{
+    transition: all .5s ease-in;
+    
+}
+

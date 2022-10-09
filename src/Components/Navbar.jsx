@@ -1,9 +1,9 @@
 import classes from "../Styles/Navbar.module.css";
 import React, { useState, useEffect } from "react";
-import { BiMenuAltRight } from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import logo from "../Images/aglet_logo.svg";
+import { HashLink as Link } from "react-router-hash-link";
+import logo from "../media/aglet_logo.svg";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
@@ -46,13 +46,13 @@ const Navbar = () => {
         >
           <ul>
             <li>
-              <Link to="/home" onClick={menuToggleHandler}>
+              <Link to={"/"} onClick={menuToggleHandler}>
                 home
               </Link>
             </li>
             <li>
               {" "}
-              <Link to="/contact" onClick={menuToggleHandler}>
+              <Link to={"/contact" } onClick={menuToggleHandler}>
                 contact
               </Link>
             </li>
@@ -60,13 +60,15 @@ const Navbar = () => {
         </nav>
         <div className={classes.header__content__toggle}>
           {!menuOpen ? (
-            <BiMenuAltRight onClick={menuToggleHandler} />
+            <BiMenu onClick={menuToggleHandler} />
           ) : (
             <AiOutlineClose onClick={menuToggleHandler} />
           )}
         </div>
-      </div>
+      </div>      
     </header>
+    
+    
   );
 };
 export default Navbar;
