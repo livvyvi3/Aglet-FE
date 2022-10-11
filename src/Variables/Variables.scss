@@ -18,8 +18,9 @@ $borderRadius: 12px;
 
 // header height
 $headerHeight: 100px;
+
 // Mxins
-@mixin brkPointSmallScreen($point) {
+@mixin brkPoint($point) {
     @if $point == md {
         // 768px
         @media (min-width: 48em) {
@@ -28,13 +29,6 @@ $headerHeight: 100px;
     }
 }
 
-@mixin mobileScreen ($point){
-    @if $point == md{
-        @media (max-width: 640px) {
-            @content;
-        }
-    }
-}
 @mixin flexCenter($direction){
     display: flex;
     justify-content: center;

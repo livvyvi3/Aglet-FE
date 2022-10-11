@@ -8,18 +8,20 @@ import Navbar from "./Navbar";
 
 function Contact() {
     return (
+       <div>
+         <Navbar/>
         <section className={classes.section}>
-            <Navbar/>
+            
             <div className={classes.section__contact}> 
-                <div className="contact__img">
+                <div className={classes.section__contact__img}>
                     <img src={contactImg}alt=""/>
                 </div>               
-                <div className='contact__info'>
+                <div className={classes.section__contact__info}>
                 <h1 className={classes.section__contact__info__title}>hello</h1>
                 <p className={classes.section__contact__info__details}>
                         my name is Vongai Olivia Machingura <br/>
                         and I am currently spening most of my time <br/>
-                        coding
+                        coding<br/>
                     
                         you can reach me on: <br/>
                         tel: <Link to="tel:+27659559772">+27 81 419 3222</Link> <br/>
@@ -34,6 +36,7 @@ function Contact() {
                 </div>
                 </div>
         </section>
+       </div>
     );
 };
 

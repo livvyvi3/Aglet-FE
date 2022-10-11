@@ -1,21 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 .section {
   background: rgb(24, 24, 24);
-  margin: 0;
-  width: 100vw;
+  padding-bottom: 8rem;
+  padding-right: 5rem;
 }
 .section__contact {
+  gap: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 32px;
-  width: 100vw;
-  height: 100%;
+}
+@media (min-width: 48em) {
+  .section__contact {
+    gap: 2rem;
+    width: 100%;
+    height: 110vh;
+  }
 }
 .section__contact__img img {
-  width: 100%;
-  aspect-ratio: 1/1;
+  width: 250px;
+  height: 400px;
+}
+@media (min-width: 48em) {
+  .section__contact__img {
+    padding-left: 10%;
+  }
+  .section__contact__img img {
+    width: 100%;
+    height: 90%;
+    aspect-ratio: 1/1;
+  }
 }
 .section__contact__info {
   flex: 1;
@@ -23,20 +38,28 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 40px;
-  overflow: hidden;
+  align-items: left;
+  margin-right: 10px;
+  gap: 5px;
 }
 .section__contact__info__title {
-  font-size: 250px;
+  font-size: 90px;
   color: rgb(114, 109, 109);
-  position: relative;
-  left: -50%;
+  margin-bottom: 2px;
+}
+@media (min-width: 48em) {
+  .section__contact__info__title {
+    margin: 10px auto;
+    font-size: 250px;
+    position: relative;
+    left: -50%;
+  }
 }
 .section__contact__info__details {
-  font-size: 20px;
+  font-size: 15px;
   color: rgb(255, 255, 255);
   text-decoration: none;
+  margin-top: 5px;
 }
 .section__contact__info__details a {
   text-decoration: none;
@@ -45,34 +68,21 @@
 .section__contact__info__details a:hover {
   color: rgb(114, 109, 109);
 }
+@media (min-width: 48em) {
+  .section__contact__info__details {
+    font-size: 20px;
+    margin-top: 10px;
+    gap: 5px;
+  }
+}
 .section__contact__info__socials {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  justify-content: left;
   gap: 15px;
+  margin-top: 5px;
 }
 .section__contact__info__icons {
   color: rgb(255, 255, 255);
-}
-@media (max-width: 640px) {
-  .section__contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    align-items: flex-end;
-  }
-  .section__contact__contact {
-    width: 80%;
-    height: 93%;
-  }
-  .section__contact__contact__img img {
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-  .section__contact__contact__info-title {
-    left: -33%;
-  }
 }/*# sourceMappingURL=contact.module.css.map */
