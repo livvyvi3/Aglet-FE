@@ -1,5 +1,99 @@
 @import '../Variables/Variables.scss';
 
-.section{
-    background-color: $blackColor;
+.videoSlider {
+    background: $blackColor;
+    position: absolute;
+    transition: 0.3s ease all;
+    height: 100vh;
+
+
+    &__container {
+        display: grid;
+        grid-auto-flow: row;
+        cursor: pointer;
+
+        &__card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            &__vid {
+                width: 100%;
+                height: 100%;
+            }
+
+            &__info {
+                position: absolute;
+                top: 40%;
+                color: $whiteColor;
+                padding-left: 20px;
+
+                h3 {
+                    color: $whiteColor;
+                }
+
+            }
+
+
+        }
+    }
+
+    @include brkPoint(md) {
+        ::-webkit-scrollbar {
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: $primary;
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgb(219, 214, 214);
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: $whiteColor;
+            cursor: grab;
+        }
+        .videoSlider {
+            @include flexCenter(row);
+            height: 150vh;
+            overflow-x: auto;
+            background-color: $blackColor;
+            scroll-snap-type: inline mandatory;
+            
+
+            &__container {
+                grid-auto-flow: column;
+                grid-auto-columns: 37%;
+                margin-top: 10px;
+                cursor: grab;
+
+                &__card {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+
+                    &__info {
+
+                        position: absolute;
+                        top: 90%;
+
+                        &__title {
+                            font-size: 25px;
+                            margin-top: 3.5rem;
+                            margin-bottom: 10px;
+                            color: $whiteColor;
+                        }
+
+                        h3 {
+                            color: $primary;
+                            font-size: 15px;
+                            font-weight: normal;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }   
 }

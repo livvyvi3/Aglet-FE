@@ -20,7 +20,7 @@ function Contact() {
                 <h1 className={classes.section__contact__info__title}>hello</h1>
                 <p className={classes.section__contact__info__details}>
                         my name is Vongai Olivia Machingura <br/>
-                        and I am currently spening most of my time <br/>
+                        and I am currently spending most of my time <br/>
                         coding<br/>
                     
                         you can reach me on: <br/>

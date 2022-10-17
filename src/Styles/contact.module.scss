@@ -11,7 +11,7 @@
 
         @include flexCenter(row);
         @include brkPoint (md){
-            gap: 2rem;
+            gap: 32px;
             width: 100%;
             height: 110vh;
         }   
