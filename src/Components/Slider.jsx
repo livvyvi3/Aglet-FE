@@ -27,18 +27,27 @@ import timeToLookVid from "../media/Videos/TimeToLookUpAgain_8Sec_L.mp4";
 import React from "react";
 
 const Slider = () => {
+  const clip = document.querySelectorAll('.videoSlider__container__card__vid');
+  for (let i = 0; i <  clip.length; i++){
+    clip[i].addEventListener('mouseenter', function(e){
+      clip[i].play()
+    })
+    clip[i].addEventListener('mouseout', function(e){
+      clip[i].pause()
+    })
+  }
   
   return (
     <div>
       <Navbar />
-      <main className={classes.videoSlider} id="home" smooth>
+      <main className={classes.videoSlider} id="home" smooth="true" >
         <section className={classes.videoSlider__container}>
           <div className={classes.videoSlider__container__card}>
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
-              src={growVid}
+              playsInline
+              src={growVid} type="video/mp4" 
               poster={growImg}
               loop
             ></video>
@@ -53,8 +62,8 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
-              src={easyRiderVid}
+              playsInline
+              src={easyRiderVid} type="video/mp4" 
               poster={easyRider}
               loop
             ></video>
@@ -69,8 +78,8 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
-              src={eqStageVid}
+              playsInline
+              src={eqStageVid} type="video/mp4" 
               poster={eqStage}
               loop
             ></video>
@@ -85,8 +94,8 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
-              src={F1_stagVid}
+              playsInline
+              src={F1_stagVid} type="video/mp4" 
               poster={F1stage}
               loop
             ></video>
@@ -101,8 +110,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={bmwVidStage}
+              type="video/mp4" 
               poster={bmwStage}
               loop
             ></video>
@@ -117,8 +127,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={IAA_vid}
+              type="video/mp4" 
               poster={IAA_Makingof_8Sec_L}
               loop
             ></video>
@@ -133,8 +144,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={katjesVid}
+              type="video/mp4"
               poster={katjes_stage}
               loop
             ></video>
@@ -149,8 +161,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={mercedesVid}
+              type="video/mp4"
               poster={Mercedes}
               loop
             ></video>
@@ -165,8 +178,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={riskVid}
+              type="video/mp4"
               poster={risk_1}
               loop
             ></video>
@@ -181,8 +195,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={stage_gVid}
+              type="video/mp4"
               poster={stage_g_class_dna}
               loop
             ></video>
@@ -197,8 +212,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={stage_xmasVid}
+              type="video/mp4"
               poster={stage_xmas}
               loop
             ></video>
@@ -213,8 +229,9 @@ const Slider = () => {
             <video
               className={classes.videoSlider__container__card__vid}
               muted
-              playsinline
+              playsInline
               src={timeToLookVid}
+              type="video/mp4"
               poster={TimeToLookUpAgain_8Sec_L}
               loop
             ></video>
